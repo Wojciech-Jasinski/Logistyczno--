@@ -1,0 +1,53 @@
+.info-bar {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  width: 1920px;
+  min-height: 50px;
+  background-color: antiquewhite;
+  border: 1px solid black;
+  border-top: 0px;
+  padding: 2px;
+  &:first-child {
+    border-top: 1px solid black;
+  }
+  &__timepicker {
+    width: 120px;
+    // line-break: auto;
+    height: 25px;
+    text-align: center;
+    background-color: greenyellow;
+  }
+  &__data-small {
+    width: 40px;
+    min-height: 25px;
+    text-align: center;
+  }
+  &__data-big {
+    width: 140px;
+    height: 25px;
+    text-align: center;
+    text-justify: newspaper;
+
+    // word-break: break-all;
+
+    resize: none;
+    overflow: hidden;
+    // min-height: 10px;
+  }
+
+  &__event {
+    &--container {
+      display: flex;
+    }
+    &__button {
+      height: 20px;
+      -ms-transform: scale(2); /* IE */
+      -moz-transform: scale(2); /* FF */
+      -webkit-transform: scale(2); /* Safari and Chrome */
+      -o-transform: scale(2); /* Opera */
+      transform: scale(2);
+      //   padding: 10px;
+    }
+  }
+}

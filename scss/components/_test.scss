@@ -1,0 +1,15 @@
+.test {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  &--h {
+    width: fit-content;
+    height: 30px;
+    background-color: green;
+  }
+  &--h--active {
+    width: fit-content;
+    height: 30px;
+    background-color: red;
+  }
+}
