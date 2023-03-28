@@ -49,7 +49,7 @@
   border-top: 1px solid black;
 }
 .info-bar__timepicker {
-  width: 120px;
+  width: 80px;
   height: 25px;
   text-align: center;
   background-color: greenyellow;
@@ -58,6 +58,7 @@
   width: 40px;
   min-height: 25px;
   text-align: center;
+  font-weight: 900;
 }
 .info-bar__data-big {
   width: 140px;

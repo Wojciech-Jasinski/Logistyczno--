@@ -8,7 +8,7 @@
     {
       "extensionName": ".min.css",
       "format": "compressed",
-      "savePath": "./css"
+      "savePath": "./public/css"
     }
   ],
   "liveSassCompile.settings.excludeList": [
