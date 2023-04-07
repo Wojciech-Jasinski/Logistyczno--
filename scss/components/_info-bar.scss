@@ -1,22 +1,28 @@
 .info-bar {
   display: flex;
-  gap: 5px;
+  gap: 2px;
+
+  margin: auto;
   align-items: center;
-  width: 1920px;
-  min-height: 50px;
+  width: 1600px;
+  // width: 20vw;
+  min-height: 40px;
   background-color: antiquewhite;
+  background-color: $info-bar-color;
   border: 1px solid black;
   border-top: 0px;
-  padding: 2px;
+  padding: 3px;
   &:first-child {
     border-top: 1px solid black;
   }
   &__timepicker {
     width: 80px;
     // line-break: auto;
-    height: 25px;
+    height: 30px;
     text-align: center;
     background-color: greenyellow;
+
+    border-radius: 10px;
   }
   &__data-small {
     width: 40px;
@@ -40,15 +46,226 @@
   &__event {
     &--container {
       display: flex;
+      align-items: center;
+      height: 30px;
+      //   background-color: aqua;
+      & > .info-bar__timepicker {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
     }
     &__button {
-      height: 20px;
-      -ms-transform: scale(2); /* IE */
-      -moz-transform: scale(2); /* FF */
-      -webkit-transform: scale(2); /* Safari and Chrome */
-      -o-transform: scale(2); /* Opera */
-      transform: scale(2);
-      //   padding: 10px;
+      height: 10px;
+
+      transform: scale(1.4);
+      padding: 0;
+      margin: 3px 2px;
+      &:hover,
+      &:focus {
+        cursor: pointer;
+      }
+      &--container {
+        display: flex;
+        flex-direction: column;
+      }
     }
+  }
+}
+
+.free-from {
+  &--grid-container {
+    width: min-content;
+    display: grid;
+    grid-template-rows: 20px 20px;
+    grid-template-columns: 42px 80px 40px 30px 40px;
+    gap: 2px;
+    background-color: $grid-container-background;
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 3px;
+    // padding: 2px;
+
+    // border-collapse: collapse;
+    // overflow: hidden;
+  }
+  &__display-btn {
+    // border: none;
+    margin: 0;
+    height: 42px;
+    // scale: 1.1;
+    // outline: none;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    // margin: 2px;
+    &:checked + label:before {
+      background: red;
+      color: green;
+    }
+  }
+  &__date {
+    background-color: $imput-background;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+    text-align: center;
+
+    border: none;
+    border-collapse: inherit;
+    position: relative;
+    &:active,
+    &:focus {
+      border: 0;
+      z-index: 2;
+      outline: none;
+
+      box-shadow: $box-shadow-selected-input;
+    }
+
+    &::before {
+      content: "TxT";
+      position: absolute;
+      right: 0px;
+      z-index: 3;
+      width: 100px;
+      height: 100px;
+      background-color: green;
+    }
+  }
+  &__truck-ID {
+    background-color: $imput-background;
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+
+    border: none;
+    border-left: 0;
+    border-collapse: inherit;
+
+    &:active,
+    &:focus {
+      border: 0;
+      z-index: 2;
+      outline: none;
+      box-shadow: $box-shadow-selected-input;
+    }
+  }
+  &__country {
+    background-color: $imput-background;
+
+    border: none;
+    border-left: 0;
+    border-bottom: 0;
+    text-align: center;
+    font-weight: 900;
+
+    &:active,
+    &:focus {
+      border-color: map-get($country, "border-color");
+      z-index: map-get($country, "z-index");
+      outline: map-get($country, "outline");
+      box-shadow: $box-shadow-selected-input;
+
+      //   border-color: white;
+      //   z-index: 2;
+      //   outline: none;
+      //   box-shadow: 0 0 0 1px black, 0 0 0 2px yellow, 0 0 2px 5px black;
+    }
+  }
+  &__falg {
+    // background-color: rgb(175, 115, 115);
+    background-color: $imput-background;
+
+    border: none;
+  }
+  &__post-code {
+    background-color: $imput-background;
+
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column: span 2;
+    text-align: center;
+    font-weight: 900;
+
+    border: none;
+
+    &:active,
+    &:focus {
+      z-index: 2;
+      outline: none;
+      box-shadow: $box-shadow-selected-input;
+    }
+  }
+}
+.data-big {
+  // width: 140px;
+  height: 44px;
+  text-align: center;
+
+  // padding-top: 20px;
+
+  // text-justify: c;
+
+  // word-break: break-all;
+
+  resize: none;
+  overflow: hidden;
+  background-color: $imput-background;
+  // min-height: 10px;
+  &:active,
+  &:focus {
+    z-index: 2;
+    outline: none;
+    box-shadow: $box-shadow-selected-input;
+  }
+}
+
+.basic-info {
+  &--grid-container {
+    width: min-content;
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 150px 150px 20px 150px;
+    gap: 2px;
+    background-color: black;
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 3px;
+
+    background-color: $grid-container-background;
+  }
+  &__company {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  &__contact {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  &__contact-text {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: end;
+    margin: 0;
+    background-color: $imput-background;
+    font-size: 10px;
+    height: 20px;
+    text-align: center;
+  }
+  &__contact-btn {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-self: start;
+
+    margin: 0;
+    height: 20px;
+    // scale: 2;
+  }
+  &__important {
+    grid-row-start: 1;
+    grid-row-end: 3;
   }
 }

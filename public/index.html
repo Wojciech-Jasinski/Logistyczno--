@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -70,7 +70,10 @@
           position="operation1"
           class="info-bar__timepicker"
         />
-        <input type="checkbox" class="info-bar__event__button" />
+        <div class="info-bar__event__button--container">
+          <input type="checkbox" class="info-bar__event__button" />
+          <input type="checkbox" class="info-bar__event__button" />
+        </div>
       </div>
       <div class="info-bar__event--container">
         <input
@@ -79,7 +82,68 @@
           position="operation2"
           class="info-bar__timepicker"
         />
-        <input type="checkbox" class="info-bar__event__button" />
+        <div class="info-bar__event__button--container">
+          <input type="checkbox" class="info-bar__event__button" />
+          <input type="checkbox" class="info-bar__event__button" />
+        </div>
+      </div>
+    </section>
+
+    <section class="info-bar" id="2">
+      <div class="free-from--grid-container">
+        <input type="checkbox" class="free-from__display-btn" />
+        <input
+          type="text"
+          dll="datetime-picker"
+          class="free-from__date"
+          placeholder="DATA"
+          spellcheck="false"
+        />
+        <input
+          type="text"
+          placeholder="NR"
+          class="free-from__truck-ID"
+          onfocus="this.select()"
+          spellcheck="false"
+        />
+        <input
+          type="text"
+          placeholder="Kraj"
+          class="free-from__country"
+          onkeyup="this.value = this.value.toUpperCase();"
+          onfocus="this.select()"
+          spellcheck="false"
+        />
+        <div class="free-from__falg"></div>
+        <input
+          type="text"
+          placeholder="Kod"
+          spellcheck="false"
+          class="free-from__post-code"
+          onfocus="this.select()"
+        />
+      </div>
+      <div class="basic-info--grid-container">
+        <textarea
+          oninput="auto_grow(this)"
+          placeholder="Firma"
+          spellcheck="false"
+          class="data-big basic-info__company"
+        ></textarea>
+        <textarea
+          oninput="auto_grow(this)"
+          placeholder="Kontakt"
+          spellcheck="false"
+          class="data-big basic-info__contact"
+        ></textarea>
+        <p class="basic-info__contact-text">info</p>
+        <input type="checkbox" class="basic-info__contact-btn" />
+        <textarea
+          oninput="auto_grow(this)"
+          placeholder="Dodatkowe info"
+          spellcheck="false"
+          class="data-big basic-info__important"
+        ></textarea>
       </div>
     </section>
 

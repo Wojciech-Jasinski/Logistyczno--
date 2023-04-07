@@ -1,27 +1,24 @@
-const inputTag = test("input", {
-  onOpen(d, dstr, ins) {
-    console.log(
-      "edit: " + ins.element.closest(".info-bar").id,
-      ins.element.getAttribute("position"),
-      ins.element.value
-    );
-  },
-  onChange() {},
-  onClose(d, dstr, ins) {
-    const ID = ins.element.closest(".info-bar").id;
-    const position = ins.element.getAttribute("position");
-    const newValue = ins.element.value;
-    console.log(ID, position, newValue);
+// console.log(document.activeElement);
 
-    const data = { ID, position, newValue };
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    };
-    fetch("/api", options);
-    console.log("change send to server");
-  },
-});
+// const bodyListener = document.querySelector("body");
+// console.log(bodyListener);
+
+// bodyListener.addEventListener(
+//   "click",
+//   () => console.log(document.activeElement),
+//   false
+// );
+
+// body.addEventListener("onClick", console.log(body));
+const sendContent = (element) => {
+  return () => {
+    console.log(element.value);
+  };
+};
+const initiateInputEvents = () => {
+  const inputs = document.querySelectorAll("input");
+  for (const i of inputs) {
+    i.addEventListener("change", sendContent(i));
+  }
+};
+initiateInputEvents();
