@@ -1,6 +1,6 @@
 .info-bar {
   display: flex;
-  gap: 2px;
+  gap: 6px;
 
   margin: auto;
   align-items: center;
@@ -12,65 +12,67 @@
   border: 1px solid black;
   border-top: 0px;
   padding: 3px;
-  &:first-child {
-    border-top: 1px solid black;
-  }
-  &__timepicker {
-    width: 80px;
-    // line-break: auto;
-    height: 30px;
-    text-align: center;
-    background-color: greenyellow;
-
-    border-radius: 10px;
-  }
-  &__data-small {
-    width: 40px;
-    min-height: 25px;
-    text-align: center;
-    font-weight: 900;
-  }
-  &__data-big {
-    width: 140px;
-    height: 25px;
-    text-align: center;
-    text-justify: newspaper;
-
-    // word-break: break-all;
-
-    resize: none;
-    overflow: hidden;
-    // min-height: 10px;
-  }
-
-  &__event {
-    &--container {
-      display: flex;
-      align-items: center;
-      height: 30px;
-      //   background-color: aqua;
-      & > .info-bar__timepicker {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-    }
-    &__button {
-      height: 10px;
-
-      transform: scale(1.4);
-      padding: 0;
-      margin: 3px 2px;
-      &:hover,
-      &:focus {
-        cursor: pointer;
-      }
-      &--container {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
 }
+
+//   &:first-child {
+//     border-top: 1px solid black;
+//   }
+//   &__timepicker {
+//     width: 80px;
+//     // line-break: auto;
+//     height: 30px;
+//     text-align: center;
+//     background-color: greenyellow;
+
+//     border-radius: 10px;
+//   }
+//   &__data-small {
+//     width: 40px;
+//     min-height: 25px;
+//     text-align: center;
+//     font-weight: 900;
+//   }
+//   &__data-big {
+//     width: 140px;
+//     height: 25px;
+//     text-align: center;
+//     text-justify: newspaper;
+
+//     // word-break: break-all;
+
+//     resize: none;
+//     overflow: hidden;
+//     // min-height: 10px;
+//   }
+
+//   &__event {
+//     &--container {
+//       display: flex;
+//       align-items: center;
+//       height: 30px;
+//       //   background-color: aqua;
+//       & > .info-bar__timepicker {
+//         border-top-right-radius: 0;
+//         border-bottom-right-radius: 0;
+//       }
+//     }
+//     &__button {
+//       height: 10px;
+
+//       transform: scale(1.4);
+//       padding: 0;
+//       margin: 3px 2px;
+//       &:hover,
+//       &:focus {
+//         cursor: pointer;
+//       }
+//       &--container {
+//         display: flex;
+//         flex-direction: column;
+//       }
+//     }
+//   }
+// }
 
 .free-from {
   &--grid-container {
@@ -98,10 +100,6 @@
     grid-row-end: 3;
 
     // margin: 2px;
-    &:checked + label:before {
-      background: red;
-      color: green;
-    }
   }
   &__date {
     background-color: $imput-background;
@@ -119,18 +117,19 @@
       z-index: 2;
       outline: none;
 
+      background-color: $imput-background-active;
       box-shadow: $box-shadow-selected-input;
     }
 
-    &::before {
-      content: "TxT";
-      position: absolute;
-      right: 0px;
-      z-index: 3;
-      width: 100px;
-      height: 100px;
-      background-color: green;
-    }
+    // &::before {
+    //   content: "TxT";
+    //   position: absolute;
+    //   right: 0px;
+    //   z-index: 3;
+    //   width: 100px;
+    //   height: 100px;
+    //   background-color: green;
+    // }
   }
   &__truck-ID {
     background-color: $imput-background;
@@ -151,6 +150,7 @@
       z-index: 2;
       outline: none;
       box-shadow: $box-shadow-selected-input;
+      background-color: $imput-background-active;
     }
   }
   &__country {
@@ -167,7 +167,9 @@
       border-color: map-get($country, "border-color");
       z-index: map-get($country, "z-index");
       outline: map-get($country, "outline");
+
       box-shadow: $box-shadow-selected-input;
+      background-color: $imput-background-active;
 
       //   border-color: white;
       //   z-index: 2;
@@ -197,6 +199,7 @@
       z-index: 2;
       outline: none;
       box-shadow: $box-shadow-selected-input;
+      background-color: $imput-background-active;
     }
   }
 }
@@ -212,6 +215,7 @@
   // word-break: break-all;
 
   resize: none;
+  border: none;
   overflow: hidden;
   background-color: $imput-background;
   // min-height: 10px;
@@ -220,6 +224,7 @@
     z-index: 2;
     outline: none;
     box-shadow: $box-shadow-selected-input;
+    background-color: $imput-background-active;
   }
 }
 
@@ -260,6 +265,8 @@
     grid-row-end: 3;
     align-self: start;
 
+    // border: none;
+
     margin: 0;
     height: 20px;
     // scale: 2;
@@ -267,5 +274,77 @@
   &__important {
     grid-row-start: 1;
     grid-row-end: 3;
+  }
+}
+
+.operation {
+  &--grid-container {
+    width: min-content;
+    display: grid;
+    grid-template-rows: 20px 20px;
+    grid-template-columns: 50px 80px 20px;
+    gap: 2px;
+    background-color: $grid-container-background;
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 3px;
+    // padding: 2px;
+
+    // border-collapse: collapse;
+    // overflow: hidden;
+    &--last {
+      grid-template-columns: 50px 80px 20px 30px;
+    }
+  }
+  &__type {
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    border: none;
+
+    background-color: $imput-background;
+    &:active,
+    &:focus {
+      z-index: 2;
+      outline: none;
+      box-shadow: $box-shadow-selected-input;
+      background-color: $imput-background-active;
+    }
+  }
+  &__arived-btn {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: start;
+
+    margin: 0;
+    height: 20px;
+    // scale: 2;
+  }
+  &__done-btn {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-self: start;
+
+    margin: 0;
+    height: 20px;
+    // scale: 2;
+  }
+  &__delete-btn {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 20px;
+    height: 42px;
+    justify-self: end;
+    outline: none;
+    background-color: rgb(161, 0, 0);
+    text-orientation: upright;
+    padding: 0;
+    & > div {
+      transform: rotate(-90deg) translateY(-10px);
+      width: fit-content;
+      height: fit-content;
+      font-size: 10px;
+      // font-weight: 900;
+      color: $imput-background;
+    }
   }
 }

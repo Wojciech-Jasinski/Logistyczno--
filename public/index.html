@@ -22,7 +22,9 @@
     <title>Document</title>
   </head>
   <body>
-    <section class="info-bar" id="1">
+    <!-- <section class="info-bar" id="1">
+
+
       <input
         type="text"
         dll="datetime-picker"
@@ -87,6 +89,105 @@
           <input type="checkbox" class="info-bar__event__button" />
         </div>
       </div>
+    </section> -->
+
+    <!-- Second version of bar -->
+
+    <section class="info-bar" id="2">
+      <div class="free-from--grid-container">
+        <input type="checkbox" class="free-from__display-btn" />
+        <input
+          type="text"
+          dll="datetime-picker"
+          class="free-from__date"
+          placeholder="DATA"
+          spellcheck="false"
+        />
+        <input
+          type="text"
+          placeholder="NR"
+          class="free-from__truck-ID"
+          onfocus="this.select()"
+          spellcheck="false"
+        />
+        <input
+          type="text"
+          placeholder="Kraj"
+          class="free-from__country"
+          onkeyup="this.value = this.value.toUpperCase();"
+          onfocus="this.select()"
+          spellcheck="false"
+        />
+        <div class="free-from__falg"></div>
+        <input
+          type="text"
+          placeholder="Kod"
+          spellcheck="false"
+          class="free-from__post-code"
+          onfocus="this.select()"
+        />
+      </div>
+
+      <!-- basic info -->
+
+      <div class="basic-info--grid-container">
+        <textarea
+          oninput="auto_grow(this)"
+          placeholder="Firma"
+          spellcheck="false"
+          class="data-big basic-info__company"
+        ></textarea>
+        <textarea
+          oninput="auto_grow(this)"
+          placeholder="Kontakt"
+          spellcheck="false"
+          class="data-big basic-info__contact"
+        ></textarea>
+        <p class="basic-info__contact-text">info</p>
+        <input type="checkbox" class="basic-info__contact-btn" />
+        <textarea
+          oninput="auto_grow(this)"
+          placeholder="Dodatkowe info"
+          spellcheck="false"
+          class="data-big basic-info__important"
+        ></textarea>
+      </div>
+
+      <!-- operation timers -->
+      <div class="operation--grid-container">
+        <select class="operation__type">
+          <option value="ZAŁ" selected="selected">ZAŁ</option>
+          <option value="ROZ">ROZ</option>
+          <option value="CŁO">CŁO</option>
+        </select>
+        <input
+          type="text"
+          dll="datetime-picker"
+          class="free-from__date"
+          placeholder="DATA"
+          spellcheck="false"
+        />
+        <input type="checkbox" class="operation__arived-btn" />
+        <input type="checkbox" class="operation__done-btn" />
+      </div>
+
+      <div class="operation--grid-container operation--grid-container--last">
+        <select class="operation__type">
+          <option value="ZAŁ">ZAŁ</option>
+          <option value="ROZ" selected="selected">ROZ</option>
+          <option value="CŁO">CŁO</option>
+        </select>
+        <input
+          type="text"
+          dll="datetime-picker"
+          class="free-from__date"
+          placeholder="DATA"
+          spellcheck="false"
+        />
+        <input type="checkbox" class="operation__arived-btn" />
+        <input type="checkbox" class="operation__done-btn" />
+        <button class="operation__delete-btn"><div>DELETE</div></button>
+      </div>
     </section>
 
     <section class="info-bar" id="2">
@@ -123,6 +224,9 @@
           onfocus="this.select()"
         />
       </div>
+
+      <!-- basic info -->
+
       <div class="basic-info--grid-container">
         <textarea
           oninput="auto_grow(this)"
@@ -145,7 +249,43 @@
           class="data-big basic-info__important"
         ></textarea>
       </div>
+
+      <!-- operation timers -->
+      <div class="operation--grid-container">
+        <select class="operation__type">
+          <option value="ZAŁ" selected="selected">ZAŁ</option>
+          <option value="ROZ">ROZ</option>
+          <option value="CŁO">CŁO</option>
+        </select>
+        <input
+          type="text"
+          dll="datetime-picker"
+          class="free-from__date"
+          placeholder="DATA"
+          spellcheck="false"
+        />
+        <input type="checkbox" class="operation__arived-btn" />
+        <input type="checkbox" class="operation__done-btn" />
+      </div>
+
+      <div class="operation--grid-container">
+        <select class="operation__type">
+          <option value="ZAŁ">ZAŁ</option>
+          <option value="ROZ" selected="selected">ROZ</option>
+          <option value="CŁO">CŁO</option>
+        </select>
+        <input
+          type="text"
+          dll="datetime-picker"
+          class="free-from__date"
+          placeholder="DATA"
+          spellcheck="false"
+        />
+        <input type="checkbox" class="operation__arived-btn" />
+        <input type="checkbox" class="operation__done-btn" />
+      </div>
     </section>
+    <!-- Scripts -->
 
     <script src="js/index.js"></script>
 

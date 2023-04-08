@@ -10,6 +10,8 @@
 body {
   margin: 0;
   padding: 5px;
+  background-color: #b3c1d1;
+  min-height: 100vh;
 }
 
 .test {
@@ -33,14 +35,15 @@ body {
 }
 
 .flatpickr-input.active {
-  background-color: red;
+  background-color: #dddc4b;
+  font-weight: 900;
 }
 
 .info-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 2px;
+  gap: 6px;
   margin: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -52,62 +55,6 @@ body {
   border: 1px solid black;
   border-top: 0px;
   padding: 3px;
-}
-.info-bar:first-child {
-  border-top: 1px solid black;
-}
-.info-bar__timepicker {
-  width: 80px;
-  height: 30px;
-  text-align: center;
-  background-color: greenyellow;
-  border-radius: 10px;
-}
-.info-bar__data-small {
-  width: 40px;
-  min-height: 25px;
-  text-align: center;
-  font-weight: 900;
-}
-.info-bar__data-big {
-  width: 140px;
-  height: 25px;
-  text-align: center;
-  text-justify: newspaper;
-  resize: none;
-  overflow: hidden;
-}
-.info-bar__event--container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 30px;
-}
-.info-bar__event--container > .info-bar__timepicker {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.info-bar__event__button {
-  height: 10px;
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
-  padding: 0;
-  margin: 3px 2px;
-}
-.info-bar__event__button:hover, .info-bar__event__button:focus {
-  cursor: pointer;
-}
-.info-bar__event__button--container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .free-from--grid-container {
@@ -128,10 +75,6 @@ body {
   grid-row-start: 1;
   grid-row-end: 3;
 }
-.free-from__display-btn:checked + label:before {
-  background: red;
-  color: green;
-}
 .free-from__date {
   background-color: rgb(245, 245, 220);
   grid-row-start: 1;
@@ -145,17 +88,9 @@ body {
   border: 0;
   z-index: 2;
   outline: none;
+  background-color: #dddc4b;
   -webkit-box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
           box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
-}
-.free-from__date::before {
-  content: "TxT";
-  position: absolute;
-  right: 0px;
-  z-index: 3;
-  width: 100px;
-  height: 100px;
-  background-color: green;
 }
 .free-from__truck-ID {
   background-color: rgb(245, 245, 220);
@@ -174,6 +109,7 @@ body {
   outline: none;
   -webkit-box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
           box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
+  background-color: #dddc4b;
 }
 .free-from__country {
   background-color: rgb(245, 245, 220);
@@ -189,6 +125,7 @@ body {
   outline: none;
   -webkit-box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
           box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
+  background-color: #dddc4b;
 }
 .free-from__falg {
   background-color: rgb(245, 245, 220);
@@ -208,12 +145,14 @@ body {
   outline: none;
   -webkit-box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
           box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
+  background-color: #dddc4b;
 }
 
 .data-big {
   height: 44px;
   text-align: center;
   resize: none;
+  border: none;
   overflow: hidden;
   background-color: rgb(245, 245, 220);
 }
@@ -222,6 +161,7 @@ body {
   outline: none;
   -webkit-box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
           box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
+  background-color: #dddc4b;
 }
 
 .basic-info--grid-container {
@@ -268,4 +208,70 @@ body {
 .basic-info__important {
   grid-row-start: 1;
   grid-row-end: 3;
+}
+
+.operation--grid-container {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  display: grid;
+  grid-template-rows: 20px 20px;
+  grid-template-columns: 50px 80px 20px;
+  gap: 2px;
+  background-color: #6d785f;
+  border: 1px solid rgb(66, 66, 66);
+  border-radius: 3px;
+}
+.operation--grid-container--last {
+  grid-template-columns: 50px 80px 20px 30px;
+}
+.operation__type {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border: none;
+  background-color: rgb(245, 245, 220);
+}
+.operation__type:active, .operation__type:focus {
+  z-index: 2;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
+          box-shadow: 0 0 0 1px black, 0 0 0 2px rgb(255, 167, 52), 0 0 2px 5px black;
+  background-color: #dddc4b;
+}
+.operation__arived-btn {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  align-self: start;
+  margin: 0;
+  height: 20px;
+}
+.operation__done-btn {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: start;
+  margin: 0;
+  height: 20px;
+}
+.operation__delete-btn {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  width: 20px;
+  height: 42px;
+  justify-self: end;
+  outline: none;
+  background-color: rgb(161, 0, 0);
+  text-orientation: upright;
+  padding: 0;
+}
+.operation__delete-btn > div {
+  -webkit-transform: rotate(-90deg) translateY(-10px);
+          transform: rotate(-90deg) translateY(-10px);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 10px;
+  color: rgb(245, 245, 220);
 }/*# sourceMappingURL=main.css.map */
